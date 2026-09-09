@@ -239,6 +239,10 @@ class GridWorld3x4():
 
         return state, reward, terminated, truncated, info
 
+    def reset(self,seed):
+        self.env.reset(seed=seed)
+ 
+    
 # Function to display the environment graphically and play the game with a human agent.
 def Show_Game_Gridworld(name_Envi):
     
