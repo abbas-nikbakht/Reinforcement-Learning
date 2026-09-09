@@ -242,8 +242,8 @@ class GridWorld3x4():
     def reset(self,seed):
         self.env.reset(seed=seed)
  
-    
-# Function to display the environment graphically and play the game with a human agent.
+
+# Function to display the environment graphically and play the game with a human agent.    
 def Show_Game_Gridworld(name_Envi):
     
     pygame.init()      
