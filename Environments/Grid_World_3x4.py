@@ -247,7 +247,7 @@ class GridWorld3x4():
 def Show_Game_Gridworld(name_Envi):
     
     pygame.init()      
-    game_disply = pygame.display.set_mode((465,425))
+    game_disply = pygame.display.set_mode((465,470))
     
     pygame.display.set_caption("My First")
     
@@ -375,7 +375,9 @@ def Show_Game_Gridworld(name_Envi):
                     )
                     game_disply.blit(text, (20, 340))    
                     
-                    
+                    ## Hidden Terminal
+                    pygame.draw.rect(game_disply,"black",(190,420,110,95))
+
             # Keyboard
             if event.type == pygame.KEYDOWN and terminated==False:
 
@@ -479,11 +481,27 @@ def Show_Game_Gridworld(name_Envi):
                        
                                      
                 if Human_next==3:
-        
+                    ## print Terminal
+                    font = pygame.font.Font(None, 50)
+                    text = font.render(
+                        "GOAL",
+                        True,
+                        "green"
+                    )
+                    game_disply.blit(text, (190, 420))
+                    
                     print('Goal')
         
                 if Human_next==7:
-        
+                    ## print Terminal
+                    font = pygame.font.Font(None, 50)
+                    text = font.render(
+                        "HOLE",
+                        True,
+                        "red"
+                    )
+                    game_disply.blit(text, (190, 420))
+                    
                     print('Hollow')            
     
 
