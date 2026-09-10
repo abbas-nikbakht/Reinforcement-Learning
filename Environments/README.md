@@ -34,7 +34,7 @@ This interactive environment serves as a simple visualization tool for exploring
 
 ---
 
-### Technologies
+## Technologies
 
 | Technology | Purpose                                      |
 | ---------- | -------------------------------------------- |
@@ -44,7 +44,7 @@ This interactive environment serves as a simple visualization tool for exploring
 
 ---
 
-## 📦 Installation
+## Installation
 
 
 
@@ -56,7 +56,7 @@ pip install pygame sys gymnasium
 
 ---
 
-## ▶️ Run the Application
+## Run the Application
 
 ```bash
 python main.py
@@ -69,7 +69,7 @@ Use the keyboard arrow keys to control the agent and interact with the 3×4 Grid
 ⬅️ Move Left
 ➡️ Move Right
 
-## 🧠 Concepts Demonstrated
+## Concepts Demonstrated
 
 This project provides a practical introduction to several important Reinforcement Learning concepts:
 
@@ -92,8 +92,8 @@ Possible extensions of this project include:
 * ✅ Interactivity
 * ✅ Use keyboard directions to play
 * ✅ Graphic environment
-* [ ] Show rewards and modes in the game environment
-* [ ] Make the graphical environment more beautiful
+* ✅ Show rewards and modes in the game environment
+* ✅ Make the graphical environment more beautiful
 * [ ] etc.
 
 ---
