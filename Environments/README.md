@@ -20,7 +20,7 @@ This interactive environment serves as a simple visualization tool for exploring
 
 ---
 
-## ✨ Features
+## Features
 
 - 🎮 Interactive GridWorld gameplay using keyboard arrow keys
 - 🗺️ 3×4 grid-based environment visualization
