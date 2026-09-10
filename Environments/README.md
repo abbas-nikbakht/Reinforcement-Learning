@@ -34,7 +34,7 @@ This interactive environment serves as a simple visualization tool for exploring
 
 ---
 
-## 🛠️ Technologies
+### Technologies
 
 | Technology | Purpose                                      |
 | ---------- | -------------------------------------------- |
