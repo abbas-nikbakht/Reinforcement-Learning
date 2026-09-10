@@ -63,6 +63,7 @@ python main.py
 ```
 
 Use the keyboard arrow keys to control the agent and interact with the 3×4 GridWorld environment.
+You can use the "New Episode" button to proceed to the next episode and start the game over.
 
 ⬆️ Move Up
 ⬇️ Move Down
