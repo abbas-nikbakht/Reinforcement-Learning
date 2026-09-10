@@ -5,6 +5,8 @@
 
 In this game, we play with the environment using the keyboard directions (up, down, left, and right) and try to reach our goal, which is the green house.
 
+You can use the "New Episode" button to proceed to the next episode and start the game over.
+
 ---
 
 ## 📌 Overview
@@ -18,7 +20,7 @@ This interactive environment serves as a simple visualization tool for exploring
 
 ---
 
-## ✨ Features
+## Features
 
 - 🎮 Interactive GridWorld gameplay using keyboard arrow keys
 - 🗺️ 3×4 grid-based environment visualization
@@ -32,7 +34,7 @@ This interactive environment serves as a simple visualization tool for exploring
 
 ---
 
-## 🛠️ Technologies
+## Technologies
 
 | Technology | Purpose                                      |
 | ---------- | -------------------------------------------- |
@@ -42,7 +44,7 @@ This interactive environment serves as a simple visualization tool for exploring
 
 ---
 
-## 📦 Installation
+## Installation
 
 
 
@@ -54,20 +56,21 @@ pip install pygame sys gymnasium
 
 ---
 
-## ▶️ Run the Application
+## Run the Application
 
 ```bash
 python main.py
 ```
 
 Use the keyboard arrow keys to control the agent and interact with the 3×4 GridWorld environment.
+You can use the "New Episode" button to proceed to the next episode and start the game over.
 
 ⬆️ Move Up
 ⬇️ Move Down
 ⬅️ Move Left
 ➡️ Move Right
 
-## 🧠 Concepts Demonstrated
+## Concepts Demonstrated
 
 This project provides a practical introduction to several important Reinforcement Learning concepts:
 
@@ -90,8 +93,8 @@ Possible extensions of this project include:
 * ✅ Interactivity
 * ✅ Use keyboard directions to play
 * ✅ Graphic environment
-* [ ] Show rewards and modes in the game environment
-* [ ] Make the graphical environment more beautiful
+* ✅ Show rewards and modes in the game environment
+* ✅ Make the graphical environment more beautiful
 * [ ] etc.
 
 ---
