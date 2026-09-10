@@ -247,10 +247,11 @@ class GridWorld3x4():
 def Show_Game_Gridworld(name_Envi):
     
     pygame.init()      
-    game_disply = pygame.display.set_mode((465,305))
+    game_disply = pygame.display.set_mode((465,415))
     
     pygame.display.set_caption("My First")
     
+
     # Agent
     states = {
         0: (60, 55),
@@ -283,44 +284,6 @@ def Show_Game_Gridworld(name_Envi):
     
     
     while True:
-        
-    
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-                
-            if event.type == pygame.KEYDOWN and terminated==False:
-                
-                if event.key == pygame.K_UP:
-                    Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 3)
-                    print("Up")
-                    print(reward)
-                    
-                if event.key == pygame.K_DOWN:
-                    Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 1)
-                    print("DOWN")
-                    print(reward)
-                    
-                if event.key == pygame.K_LEFT:
-                    Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 0)
-                    print("LEFT")
-                    print(reward)
-                    
-                if event.key == pygame.K_RIGHT:
-                    Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 2)
-                    print("RIGHT")
-                    print(reward)
-    
-                                     
-                if Human_next==3:
-        
-                    print('Goal')
-        
-                if Human_next==7:
-        
-                    print('Hollow')            
-    
         ## Visual appearance of the game environment
         #Row 1
         pygame.draw.rect(game_disply,(255,255,255),(5,5,110,95))
@@ -337,7 +300,93 @@ def Show_Game_Gridworld(name_Envi):
         pygame.draw.rect(game_disply,(255,255,255),(120,205,110,95))
         pygame.draw.rect(game_disply,(255,255,255),(235,205,110,95))
         pygame.draw.rect(game_disply,(255,255,255),(350,205,110,95))
+          
     
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+                
+            if event.type == pygame.KEYDOWN and terminated==False:
+                
+                if event.key == pygame.K_UP:
+                    Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 3)
+                    print("Up")
+                    print(reward)
+                    
+                    #Row 4 (parameters state,action,reward)
+
+                    pygame.draw.rect(game_disply, "black",(5,315,455,95))
+                    
+                    font = pygame.font.Font(None, 30)
+                    text = font.render(
+                        f"State: {Human_next}       Action: Up      Reward: {reward}",
+                        True,
+                        "white"
+                    )
+                    game_disply.blit(text, (20, 315))
+
+                if event.key == pygame.K_DOWN:
+                    Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 1)
+                    print("DOWN")
+                    print(reward)
+                    
+                    #Row 4 (parameters state,action,reward)
+                    pygame.draw.rect(game_disply, "black",(5,315,455,95))
+                    
+                    font = pygame.font.Font(None, 30)
+                    text = font.render(
+                        f"State: {Human_next}       Action: DOWN      Reward: {reward}",
+                        True,
+                        "white"
+                    )
+                    game_disply.blit(text, (20, 315))
+                    
+                if event.key == pygame.K_LEFT:
+                    Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 0)
+                    print("LEFT")
+                    print(reward)
+                    
+                    #Row 4 (parameters state,action,reward)
+                    pygame.draw.rect(game_disply, "black",(5,315,455,95))
+                    
+                    font = pygame.font.Font(None, 30)
+                    text = font.render(
+                        f"State: {Human_next}       Action: LEFT      Reward: {reward}",
+                        True,
+                        "white"
+                    )
+                    game_disply.blit(text, (20, 315))
+                    
+                    
+                if event.key == pygame.K_RIGHT:
+                    Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 2)
+                    print("RIGHT")
+                    print(reward)
+                    
+                    #Row 4 (parameters state,action,reward)
+                    pygame.draw.rect(game_disply, "black",(5,315,455,95))
+                    
+                    font = pygame.font.Font(None, 30)
+                    text = font.render(
+                        f"State: {Human_next}       Action: RIGHT      Reward: {reward}",
+                        True,
+                        "white"
+                    )
+                    game_disply.blit(text, (20, 315))
+                    
+    
+                                     
+                if Human_next==3:
+        
+                    print('Goal')
+        
+                if Human_next==7:
+        
+                    print('Hollow')            
+    
+
+        
     
         
         Human(states[Human_next])                         
