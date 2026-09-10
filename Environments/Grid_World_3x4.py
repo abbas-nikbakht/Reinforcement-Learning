@@ -270,20 +270,44 @@ def Show_Game_Gridworld(name_Envi):
         11: (405, 251)
     }
     
+    # Display initial
+    #Row 4  print (parameters state,action,reward)
+    pygame.draw.rect(game_disply, "black",(5,315,455,95))
     
+    font = pygame.font.Font(None, 30)
+    text = font.render(
+        "State: 0       Action: -      Reward: 0 ",
+        True,
+        "white"
+    )
+    game_disply.blit(text, (20, 315))
+
+    ## print Episode, Step
+    font = pygame.font.Font(None, 30)
+    text = font.render(
+        "             Episode:              Step: 0",
+        True,
+        "white"
+    )
+    game_disply.blit(text, (20, 340))    
+    
+    ###
     def Human(Human_in):
         pygame.draw.circle(game_disply, (0,0,0), Human_in, 15)
     
     
     #### Parameters
+    
     human_init=0
     
     terminated = False
     
     Human_next= human_init
-    
+    step=0
     
     while True:
+
+        
         ## Visual appearance of the game environment
         #Row 1
         pygame.draw.rect(game_disply,(255,255,255),(5,5,110,95))
@@ -308,29 +332,37 @@ def Show_Game_Gridworld(name_Envi):
                 sys.exit()
                 
             if event.type == pygame.KEYDOWN and terminated==False:
-                
+                    
                 if event.key == pygame.K_UP:
                     Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 3)
                     print("Up")
                     print(reward)
-                    
-                    #Row 4 (parameters state,action,reward)
-
+                    step=step+1
+                    #Row 4  print (parameters state,action,reward)
                     pygame.draw.rect(game_disply, "black",(5,315,455,95))
                     
                     font = pygame.font.Font(None, 30)
                     text = font.render(
-                        f"State: {Human_next}       Action: Up      Reward: {reward}",
+                        f"State: {Human_next}       Action: Up      Reward: {reward} ",
                         True,
                         "white"
                     )
                     game_disply.blit(text, (20, 315))
 
+                    ## print Episode, Step
+                    font = pygame.font.Font(None, 30)
+                    text = font.render(
+                        f"             Episode:              Step: {step}",
+                        True,
+                        "white"
+                    )
+                    game_disply.blit(text, (20, 340))
+                    
                 if event.key == pygame.K_DOWN:
                     Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 1)
                     print("DOWN")
                     print(reward)
-                    
+                    step=step+1
                     #Row 4 (parameters state,action,reward)
                     pygame.draw.rect(game_disply, "black",(5,315,455,95))
                     
@@ -341,12 +373,20 @@ def Show_Game_Gridworld(name_Envi):
                         "white"
                     )
                     game_disply.blit(text, (20, 315))
+                    ## print Episode, Step
+                    font = pygame.font.Font(None, 30)
+                    text = font.render(
+                        f"             Episode:              Step: {step}",
+                        True,
+                        "white"
+                    )
+                    game_disply.blit(text, (20, 340))
                     
                 if event.key == pygame.K_LEFT:
                     Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 0)
                     print("LEFT")
                     print(reward)
-                    
+                    step=step+1
                     #Row 4 (parameters state,action,reward)
                     pygame.draw.rect(game_disply, "black",(5,315,455,95))
                     
@@ -357,13 +397,20 @@ def Show_Game_Gridworld(name_Envi):
                         "white"
                     )
                     game_disply.blit(text, (20, 315))
-                    
-                    
+                    ## print Episode, Step
+                    font = pygame.font.Font(None, 30)
+                    text = font.render(
+                        f"             Episode:              Step: {step}",
+                        True,
+                        "white"
+                    )
+                    game_disply.blit(text, (20, 340))
+                                       
                 if event.key == pygame.K_RIGHT:
                     Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 2)
                     print("RIGHT")
                     print(reward)
-                    
+                    step=step+1
                     #Row 4 (parameters state,action,reward)
                     pygame.draw.rect(game_disply, "black",(5,315,455,95))
                     
@@ -374,8 +421,15 @@ def Show_Game_Gridworld(name_Envi):
                         "white"
                     )
                     game_disply.blit(text, (20, 315))
-                    
-    
+                    ## print Episode, Step
+                    font = pygame.font.Font(None, 30)
+                    text = font.render(
+                        f"             Episode:              Step: {step}",
+                        True,
+                        "white"
+                    )
+                    game_disply.blit(text, (20, 340))
+                       
                                      
                 if Human_next==3:
         
