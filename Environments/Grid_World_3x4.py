@@ -383,9 +383,6 @@ def Show_Game_Gridworld(name_Envi):
 
                 if event.key == pygame.K_UP:
                     Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 3)
-                    print("Up")
-                    print(reward)
-                    print(Human_next)
                     step=step+1
                     #Row 4  print (parameters state,action,reward)
                     pygame.draw.rect(game_disply, "black",(5,315,455,95))
@@ -409,8 +406,6 @@ def Show_Game_Gridworld(name_Envi):
                     
                 if event.key == pygame.K_DOWN:
                     Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 1)
-                    print("DOWN")
-                    print(reward)
                     step=step+1
                     #Row 4 (parameters state,action,reward)
                     pygame.draw.rect(game_disply, "black",(5,315,455,95))
@@ -433,8 +428,6 @@ def Show_Game_Gridworld(name_Envi):
                     
                 if event.key == pygame.K_LEFT:
                     Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 0)
-                    print("LEFT")
-                    print(reward)
                     step=step+1
                     #Row 4 (parameters state,action,reward)
                     pygame.draw.rect(game_disply, "black",(5,315,455,95))
@@ -457,8 +450,6 @@ def Show_Game_Gridworld(name_Envi):
                                        
                 if event.key == pygame.K_RIGHT:
                     Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 2)
-                    print("RIGHT")
-                    print(reward)
                     step=step+1
                     #Row 4 (parameters state,action,reward)
                     pygame.draw.rect(game_disply, "black",(5,315,455,95))
@@ -489,9 +480,7 @@ def Show_Game_Gridworld(name_Envi):
                         "green"
                     )
                     game_disply.blit(text, (190, 420))
-                    
-                    print('Goal')
-        
+                            
                 if Human_next==7:
                     ## print Terminal
                     font = pygame.font.Font(None, 50)
@@ -502,7 +491,6 @@ def Show_Game_Gridworld(name_Envi):
                     )
                     game_disply.blit(text, (190, 420))
                     
-                    print('Hollow')            
     
 
         
