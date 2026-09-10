@@ -1,4 +1,7 @@
 # Simulating the Gridworld 3*4 game and human play with this environment
+<p align="center">
+  <img src="./assets/demo.gif" width="800">
+</p>
 
 In this game, we play with the environment using the keyboard directions (up, down, left, and right) and try to reach our goal, which is the green house.
 
