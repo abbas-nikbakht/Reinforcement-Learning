@@ -5,6 +5,8 @@
 
 In this game, we play with the environment using the keyboard directions (up, down, left, and right) and try to reach our goal, which is the green house.
 
+You can use the "New Episode" button to proceed to the next episode and start the game over.
+
 ---
 
 ## 📌 Overview
