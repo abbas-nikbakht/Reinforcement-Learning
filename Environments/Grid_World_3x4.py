@@ -276,7 +276,7 @@ def Show_Game_Gridworld(name_Envi):
     
     font = pygame.font.Font(None, 30)
     text = font.render(
-        "State: 0       Action: -      Reward: 0 ",
+        "State: 0       Action: -      Reward: - ",
         True,
         "white"
     )
@@ -285,7 +285,7 @@ def Show_Game_Gridworld(name_Envi):
     ## print Episode, Step
     font = pygame.font.Font(None, 30)
     text = font.render(
-        "             Episode:              Step: 0",
+        "             Episode:1              Step: -",
         True,
         "white"
     )
@@ -295,17 +295,7 @@ def Show_Game_Gridworld(name_Envi):
     def Human(Human_in):
         pygame.draw.circle(game_disply, (0,0,0), Human_in, 15)
     
-    # Button new Episode
-    new_episode_button = pygame.Rect(170, 370, 130, 40)
-    
-    pygame.draw.rect(game_disply, "gray", new_episode_button)
-    
-    font = pygame.font.Font(None, 30)
-    text = font.render("New Episode", True, "white")
-    
-    text_rect = text.get_rect(center=new_episode_button.center)
-    game_disply.blit(text, text_rect)
-    
+
     #### Parameters
     
     human_init=0
@@ -314,7 +304,7 @@ def Show_Game_Gridworld(name_Envi):
     
     Human_next= human_init
     step=0
-    
+    episode=1
     while True:
 
         
@@ -334,8 +324,18 @@ def Show_Game_Gridworld(name_Envi):
         pygame.draw.rect(game_disply,(255,255,255),(120,205,110,95))
         pygame.draw.rect(game_disply,(255,255,255),(235,205,110,95))
         pygame.draw.rect(game_disply,(255,255,255),(350,205,110,95))
-          
-    
+        
+        # Button new Episode
+        new_episode_button = pygame.Rect(170, 370, 130, 40)
+        
+        pygame.draw.rect(game_disply, "gray", new_episode_button)
+        
+        font = pygame.font.Font(None, 30)
+        text = font.render("New Episode", True, "white")
+        
+        text_rect = text.get_rect(center=new_episode_button.center)
+        game_disply.blit(text, text_rect)
+            
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -345,14 +345,45 @@ def Show_Game_Gridworld(name_Envi):
             if event.type == pygame.MOUSEBUTTONDOWN:
     
                 if new_episode_button.collidepoint(event.pos):
-                    print("new episode")
-                         
+                    episode=episode+1
+                    step = 0
+                    
+                    human_init = 0
+                    Human_next = 0
+                    
+                    terminated = False
+                    truncated = False
+                
+                    # Display initial
+                    #Row 4  print (parameters state,action,reward)
+                    pygame.draw.rect(game_disply, "black",(5,315,455,95))
+                    
+                    font = pygame.font.Font(None, 30)
+                    text = font.render(
+                        "State: 0       Action: -      Reward: - ",
+                        True,
+                        "white"
+                    )
+                    game_disply.blit(text, (20, 315))
+
+                    ## print Episode, Step
+                    font = pygame.font.Font(None, 30)
+                    text = font.render(
+                        f"             Episode:{episode}              Step: -",
+                        True,
+                        "white"
+                    )
+                    game_disply.blit(text, (20, 340))    
+                    
+                    
+            # Keyboard
             if event.type == pygame.KEYDOWN and terminated==False:
 
                 if event.key == pygame.K_UP:
                     Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 3)
                     print("Up")
                     print(reward)
+                    print(Human_next)
                     step=step+1
                     #Row 4  print (parameters state,action,reward)
                     pygame.draw.rect(game_disply, "black",(5,315,455,95))
@@ -368,7 +399,7 @@ def Show_Game_Gridworld(name_Envi):
                     ## print Episode, Step
                     font = pygame.font.Font(None, 30)
                     text = font.render(
-                        f"             Episode:              Step: {step}",
+                        f"             Episode:{episode}              Step: {step}",
                         True,
                         "white"
                     )
@@ -392,7 +423,7 @@ def Show_Game_Gridworld(name_Envi):
                     ## print Episode, Step
                     font = pygame.font.Font(None, 30)
                     text = font.render(
-                        f"             Episode:              Step: {step}",
+                        f"             Episode:{episode}              Step: {step}",
                         True,
                         "white"
                     )
@@ -416,7 +447,7 @@ def Show_Game_Gridworld(name_Envi):
                     ## print Episode, Step
                     font = pygame.font.Font(None, 30)
                     text = font.render(
-                        f"             Episode:              Step: {step}",
+                        f"             Episode:{episode}              Step: {step}",
                         True,
                         "white"
                     )
@@ -440,7 +471,7 @@ def Show_Game_Gridworld(name_Envi):
                     ## print Episode, Step
                     font = pygame.font.Font(None, 30)
                     text = font.render(
-                        f"             Episode:              Step: {step}",
+                        f"             Episode:{episode}              Step: {step}",
                         True,
                         "white"
                     )
