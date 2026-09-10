@@ -247,7 +247,7 @@ class GridWorld3x4():
 def Show_Game_Gridworld(name_Envi):
     
     pygame.init()      
-    game_disply = pygame.display.set_mode((465,415))
+    game_disply = pygame.display.set_mode((465,425))
     
     pygame.display.set_caption("My First")
     
@@ -295,6 +295,16 @@ def Show_Game_Gridworld(name_Envi):
     def Human(Human_in):
         pygame.draw.circle(game_disply, (0,0,0), Human_in, 15)
     
+    # Button new Episode
+    new_episode_button = pygame.Rect(170, 370, 130, 40)
+    
+    pygame.draw.rect(game_disply, "gray", new_episode_button)
+    
+    font = pygame.font.Font(None, 30)
+    text = font.render("New Episode", True, "white")
+    
+    text_rect = text.get_rect(center=new_episode_button.center)
+    game_disply.blit(text, text_rect)
     
     #### Parameters
     
@@ -331,8 +341,14 @@ def Show_Game_Gridworld(name_Envi):
                 pygame.quit()
                 sys.exit()
                 
+            # Mouse
+            if event.type == pygame.MOUSEBUTTONDOWN:
+    
+                if new_episode_button.collidepoint(event.pos):
+                    print("new episode")
+                         
             if event.type == pygame.KEYDOWN and terminated==False:
-                    
+
                 if event.key == pygame.K_UP:
                     Human_next, reward, terminated, truncated, info=name_Envi.step(human_init, 3)
                     print("Up")
