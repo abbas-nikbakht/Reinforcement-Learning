@@ -94,7 +94,8 @@ Possible extensions of this project include:
 * ✅ Use keyboard directions to play
 * ✅ Graphic environment
 * ✅ Show rewards and modes in the game environment
-* ✅ Make the graphical environment more beautiful
+* ✅ Beautiful graphical interface
+* [ ] Make the graphical environment more beautiful
 * [ ] etc.
 
 ---
