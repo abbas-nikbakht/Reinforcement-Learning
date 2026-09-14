@@ -1,7 +1,6 @@
 # Simulating the GridWorld 3×4 Environment and Human Play
-> [!IMPORTANT]
-> **Unlike environments provided by libraries such as Gymnasium, the core environment dynamics are implemented manually.**
-This includes the states, actions, transitions, rewards, terminal > states, and stochastic behavior of the environment.
+<font style="color:green"> This project was developed to understand the internal structure and dynamics of environments used in Reinforcement Learning by implementing a GridWorld environment from scratch.</font>
+
 
 In this project, a **3×4 GridWorld environment is implemented from scratch without using Gymnasium**.
 
