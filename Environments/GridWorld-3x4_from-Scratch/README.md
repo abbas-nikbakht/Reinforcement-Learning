@@ -1,6 +1,8 @@
 # Simulating the GridWorld 3×4 Environment and Human Play
 > [!IMPORTANT]
-> This environment is implemented from scratch without using Gymnasium.
+**Unlike environments provided by libraries such as Gymnasium, the core environment dynamics are implemented manually.**
+This includes the states, actions, transitions, rewards, terminal > states, and stochastic behavior of the environment.
+
 In this project, a **3×4 GridWorld environment is implemented from scratch without using Gymnasium**.
 
 The player can interact with the environment using the keyboard arrow keys (up, down, left, and right) and try to reach the goal, represented by the green cell.
