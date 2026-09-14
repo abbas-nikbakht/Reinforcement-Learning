@@ -12,7 +12,7 @@ This project provides an interactive **3×4 GridWorld environment implemented fr
 
 > [!IMPORTANT]
 **Unlike environments provided by libraries such as Gymnasium, the core environment dynamics are implemented manually.**
-This includes the states, actions, transitions, rewards, terminal > states, and stochastic behavior of the environment.
+This includes the states, actions, transitions, rewards, terminal states, and stochastic behavior of the environment.
 
 A human player can interact with the environment using keyboard arrow keys and observe how actions affect the agent's state and rewards.
 
