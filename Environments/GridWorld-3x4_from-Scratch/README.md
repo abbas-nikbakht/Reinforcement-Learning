@@ -1,6 +1,4 @@
 # Simulating the GridWorld 3×4 Environment and Human Play
-<font style="color:green"> This project was developed to understand the internal structure and dynamics of environments used in Reinforcement Learning by implementing a GridWorld environment from scratch.</font>
-
 
 In this project, a **3×4 GridWorld environment is implemented from scratch without using Gymnasium**.
 
@@ -12,11 +10,13 @@ The player can interact with the environment using the keyboard arrow keys (up, 
 
 This project provides an interactive **3×4 GridWorld environment implemented from scratch using Python and NumPy**.
 
-<span style="color:red"> **Unlike environments provided by libraries such as Gymnasium, the core environment dynamics are implemented manually.**</span> This includes the states, actions, transitions, rewards, terminal states, and stochastic behavior of the environment.
+> [!IMPORTANT]
+**Unlike environments provided by libraries such as Gymnasium, the core environment dynamics are implemented manually.**
+This includes the states, actions, transitions, rewards, terminal > states, and stochastic behavior of the environment.
 
 A human player can interact with the environment using keyboard arrow keys and observe how actions affect the agent's state and rewards.
 
-<span style="color:red"> Objective:</span> The main purpose of this project is to understand how a Reinforcement Learning environment works internally before using pre-built environments or implementing Reinforcement Learning algorithms.
+**Objective:** The main purpose of this project is to understand how a Reinforcement Learning environment works internally before using pre-built environments or implementing Reinforcement Learning algorithms.
 
 ---
 
@@ -107,4 +107,4 @@ Possible extensions of this project include:
 
 **Abbas Nikbakht**
 
-<span style="color:green"> This project was developed to understand the internal structure and dynamics of environments used in Reinforcement Learning by implementing a GridWorld environment from scratch.</span>
+This project was developed to understand the internal structure and dynamics of environments used in Reinforcement Learning by implementing a GridWorld environment from scratch.
