@@ -3,7 +3,7 @@ import sys
 import numpy as np
 
 
-# Environment creation By gymnasium Library
+# Environment creation By whitout gymnasium Library
 def Enviroment(Action,state_inital):
     states = {
         's0_0': np.array([0,0]),'s0_1': np.array([0,1]),'s0_2': np.array([0,2]),'s0_3': np.array([0,3]),
