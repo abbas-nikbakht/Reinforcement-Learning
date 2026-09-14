@@ -2,7 +2,7 @@ import pygame
 import sys
 import gymnasium as gym
 
-# Environment creation.
+# Environment creation By gymnasium Library
 class GridWorld3x4():
     
     def __init__(self):
