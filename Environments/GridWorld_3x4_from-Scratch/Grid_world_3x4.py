@@ -4,7 +4,57 @@ import numpy as np
 
 
 # Environment creation By whitout gymnasium Library
+# [r,s,p,Human_next]=Enviroment('Up',human_init)
 def Enviroment(Action,state_inital):
+    """
+    Simulates one transition in the 3x4 GridWorld environment.
+    
+    Parameters
+    ----------
+    Action : str
+        The action selected by the agent.
+        Available actions are:
+        'Up', 'Down', 'Right', and 'Left'.
+    
+    state_inital : str
+        The initial state of the agent.
+        States are represented using the format 's[row]_[column]'.
+        For example: 's0_0', 's1_2', 's2_3'.
+    
+    Returns
+    -------
+    r : dict
+        A dictionary containing the reward associated with each
+        possible next state.
+    
+    s_next_all : dict
+        A dictionary containing all possible next states resulting
+        from the selected action, including the intended movement
+        and possible deviations to the side.
+    
+    p_model : dict
+        A dictionary containing the transition probability of each
+        possible next state.
+        The intended movement has probability 0.8, while each
+        possible side deviation has probability 0.1.
+        At corner states, the probabilities are adjusted accordingly.
+    
+    Agent_next : str
+        The actual next state sampled according to the transition
+        probabilities.
+    
+    Notes
+    -----
+    The GridWorld is a 3x4 environment with:
+    
+    - A positive terminal state at 's0_3'.
+    - A negative terminal state at 's1_3'.
+    - An obstacle at 's1_1'.
+    - A movement cost of -0.04 for each step.
+    - A transition model in which the intended action succeeds
+      with probability 0.8 and side deviations occur with
+      probability 0.1 each.
+    """
     states = {
         's0_0': np.array([0,0]),'s0_1': np.array([0,1]),'s0_2': np.array([0,2]),'s0_3': np.array([0,3]),
         's1_0': np.array([1,0]),'s1_1': np.array([1,1]),'s1_2': np.array([1,2]),'s1_3': np.array([1,3]),
