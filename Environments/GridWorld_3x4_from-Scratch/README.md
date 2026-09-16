@@ -93,11 +93,11 @@ This project provides a practical introduction to several important Reinforcemen
 
 Possible extensions of this project include:
 
-* [x] Interactive environment
-* [x] Keyboard-controlled agent
-* [x] Graphical environment
+* ✅ Interactive environment
+* ✅ Keyboard-controlled agent
+* ✅ Graphical environment
 * Display rewards and game information
-* [x] Environment implemented from scratch
+* ✅ Environment implemented from scratch
 * [ ] Improve the graphical interface
 * [ ] Add different GridWorld configurations
 
