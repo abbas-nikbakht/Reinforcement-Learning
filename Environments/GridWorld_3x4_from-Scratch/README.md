@@ -58,7 +58,7 @@ Use the keyboard arrow keys to control the agent:
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
 Possible extensions of this project include:
 
