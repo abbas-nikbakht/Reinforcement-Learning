@@ -6,7 +6,7 @@ The player can interact with the environment using the keyboard arrow keys (up, 
 
 ---
 
-## 📌 Overview
+## 😊 Overview
 
 This project provides an interactive **3×4 GridWorld environment implemented from scratch using Python and NumPy**.
 
@@ -20,29 +20,13 @@ A human player can interact with the environment using keyboard arrow keys and o
 
 ---
 
-## Features
-
-* 🎮 Interactive GridWorld gameplay using keyboard arrow keys
-* 🗺️ 3×4 grid-based environment
-* 🤖 Manual control of the agent
-* 🎯 Goal and terminal states
-* 🔄 Stochastic state transitions
-* 💰 Reward-based interaction
-* 📍 Visualization of states and agent movements
-* 🧠 Environment implemented from scratch
-* 🔢 Transition probabilities implemented using NumPy
-* 🆕 New Episode functionality
-* **🚫 No Gymnasium dependency**
-
----
-
 ## Technologies
 
 | Technology | Purpose                                         |
 | ---------- | ----------------------------------------------- |
-| 🐍 Python  | Core programming language                       |
-| 🔢 NumPy   | Environment dynamics and stochastic transitions |
-| 🕹️ Pygame | Interactive visualization and keyboard input    |
+| Python  | Core programming language                       |
+| NumPy   | Environment dynamics and stochastic transitions |
+| Pygame | Interactive visualization and keyboard input    |
 
 ---
 
@@ -68,24 +52,6 @@ Use the keyboard arrow keys to control the agent:
 ⬇️ Move Down
 ⬅️ Move Left
 ➡️ Move Right
-
----
-
-## 🧠 Concepts Demonstrated
-
-This project provides a practical introduction to several important Reinforcement Learning concepts:
-
-* **GridWorld Environment**
-* **Agent–Environment Interaction**
-* **States and Actions**
-* **Rewards and Terminal States**
-* **State Transitions**
-* **Transition Probabilities**
-* **Stochastic Environments**
-* **Markov Decision Process (MDP)**
-* **Environment Dynamics**
-* **Reinforcement Learning Fundamentals**
-* **Environment Visualization**
 
 ---
 
