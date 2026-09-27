@@ -1,4 +1,7 @@
 # Simulating the GridWorld 3×4 Environment and Human Play
+<p align="center">
+  <img src="./assets/demo.gif" width="800">
+</p>
 
 In this project, a **3×4 GridWorld environment is implemented from scratch without using Gymnasium**.
 
