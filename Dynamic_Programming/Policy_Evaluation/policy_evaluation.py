@@ -294,21 +294,18 @@ P=EnviGridWorld3x4.env.unwrapped.P
 
 ##########################################################
 
-# for i in range(20):
-#     s_prim, r, terminated, truncated, info = EnviGridWorld3x4.step(0, 2)
-#     print("next state:", s_prim, "prob:", info["prob"])
-
-
-for _ in range(1000):    
+for _ in range(5000):    
     for s in [0,1,2,4,6,8,9,10,11]:
-    
+        
+        v[(s)]=0
+        
         for a in [0,1,2,3]:
             
             for prob, s_next, reward, done in P[s][a]:
     
                 print(prob, s_next, reward, done)
         
-                v[(s)]= policy_pi[(s,a)]*prob*(reward+v[(s_next)])
+                v[(s)]= v[(s)]+policy_pi[(s,a)]*prob*(reward+v[(s_next)])
         
         
         
