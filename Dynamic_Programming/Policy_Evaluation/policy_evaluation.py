@@ -249,11 +249,39 @@ class GridWorld3x4():
         
 
 
+# policy(state,action)
+policy_pi= {
+    (0,0): 0, (0,1): 0, (0,2): 1,(0,3): 0,
+    (1,0): 0, (1,1): 0, (1,2): 1,(1,3): 0,
+    (2,0): 0, (2,1): 0, (2,2): 1,(2,3): 0,
+    (4,0): 0, (4,1): 0, (4,2): 0,(4,3): 1,
+    (6,0): 0, (6,1): 0, (6,2): 1,(6,3): 0,
+    (8,0): 0, (8,1): 0, (8,2): 0,(8,3): 1,
+    (9,0): 0, (9,1): 0, (9,2): 1,(9,3): 0,
+    (10,0): 0,(10,1): 0,(10,2): 0,(10,3): 1,
+    (11,0): 0,(11,1): 0,(11,2): 0,(11,3): 1,
+}
+
+v = {
+    (0): 0,
+    (1): 0,
+    (2): 0,
+    (3): 0,
+    (4): 0,
+    (5): 0,
+    (6): 0,
+    (7): 0,
+    (8): 0,
+    (9): 0,
+    (10): 0,
+    (11): 0, 
+} 
 
 ########################## Parameters #####################
 # enviroment
 EnviGridWorld3x4 = GridWorld3x4()
 
+P=EnviGridWorld3x4.env.unwrapped.P    
 
 # episode_all= 5000
 
@@ -266,6 +294,26 @@ EnviGridWorld3x4 = GridWorld3x4()
 
 ##########################################################
 
-for i in range(20):
-    s_prim, r, terminated, truncated, info = EnviGridWorld3x4.step(0, 2)
-    print("next state:", s_prim, "prob:", info["prob"])
+# for i in range(20):
+#     s_prim, r, terminated, truncated, info = EnviGridWorld3x4.step(0, 2)
+#     print("next state:", s_prim, "prob:", info["prob"])
+
+
+for _ in range(1000):    
+    for s in [0,1,2,4,6,8,9,10,11]:
+    
+        for a in [0,1,2,3]:
+            
+            for prob, s_next, reward, done in P[s][a]:
+    
+                print(prob, s_next, reward, done)
+        
+                v[(s)]= policy_pi[(s,a)]*prob*(reward+v[(s_next)])
+        
+        
+        
+        
+    
+    
+    
+    
