@@ -283,8 +283,6 @@ EnviGridWorld3x4 = GridWorld3x4()
 
 P=EnviGridWorld3x4.env.unwrapped.P    
 
-# episode_all= 5000
-
 
 ### seed = controls randomness
 # To make it completely random, disable these two lines below.
