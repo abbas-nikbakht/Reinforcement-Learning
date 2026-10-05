@@ -294,7 +294,7 @@ P=EnviGridWorld3x4.env.unwrapped.P
 
 ##########################################################
 
-for _ in range(5000):    
+for _ in range(10000):      # k: for Jacobi method 
     for s in [0,1,2,4,6,8,9,10,11]:
         
         v[(s)]=0
@@ -303,7 +303,7 @@ for _ in range(5000):
             
             for prob, s_next, reward, done in P[s][a]:
     
-                print(prob, s_next, reward, done)
+                # print(prob, s_next, reward, done)
         
                 v[(s)]= v[(s)]+policy_pi[(s,a)]*prob*(reward+v[(s_next)])
         
