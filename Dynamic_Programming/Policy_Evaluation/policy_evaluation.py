@@ -292,20 +292,18 @@ P=EnviGridWorld3x4.env.unwrapped.P
 
 ##########################################################
 
-for _ in range(10000):      # k: for Jacobi method 
+for _ in range(10):      # k: Gauss-seidel method
     for s in [0,1,2,4,6,8,9,10,11]:
         
         v[(s)]=0
         
         for a in [0,1,2,3]:
             
-            for prob, s_next, reward, done in P[s][a]:
-    
-                # print(prob, s_next, reward, done)
+            for prob, s_prin, reward, done in P[s][a]:
+            
+                v[(s)]= v[(s)]+policy_pi[(s,a)]*prob*(reward+v[(s_prin)])
         
-                v[(s)]= v[(s)]+policy_pi[(s,a)]*prob*(reward+v[(s_next)])
-        
-        
+                print(v)
         
         
     
