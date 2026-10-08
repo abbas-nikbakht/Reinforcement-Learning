@@ -278,6 +278,8 @@ v = {
 } 
 
 ########################## Parameters #####################
+theta=0.001
+delta = float("inf")
 # enviroment
 EnviGridWorld3x4 = GridWorld3x4()
 
@@ -292,18 +294,28 @@ P=EnviGridWorld3x4.env.unwrapped.P
 
 ##########################################################
 
-for _ in range(10):      # k: Gauss-seidel method
+
+while delta >  theta:  # k: Gauss-seidel method
+    
+    delta=0
     for s in [0,1,2,4,6,8,9,10,11]:
         
-        v[(s)]=0
-        
+        v_old= v[s]
+
+        v_new=0
         for a in [0,1,2,3]:
             
             for prob, s_prin, reward, done in P[s][a]:
-            
-                v[(s)]= v[(s)]+policy_pi[(s,a)]*prob*(reward+v[(s_prin)])
+                v_new= v_new+policy_pi[(s,a)]*prob*(reward+v[(s_prin)])
+                
+        v[(s)]=v_new
         
-                print(v)
+        # Maximum change in V(s) across all states
+        delta = max(delta, abs(v_old - v_new))
+
+        print( f"v[({s})]",v[(s)])   
+        
+print(v)
         
         
     
