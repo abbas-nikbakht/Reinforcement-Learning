@@ -285,13 +285,6 @@ EnviGridWorld3x4 = GridWorld3x4()
 
 P=EnviGridWorld3x4.env.unwrapped.P    
 
-
-### seed = controls randomness
-# To make it completely random, disable these two lines below.
-
-# EnviGridWorld3x4.reset(seed=3)
-# random.seed(3)
-
 ##########################################################
 
 
@@ -305,8 +298,8 @@ while delta >  theta:  # k: Gauss-seidel method
         v_new=0
         for a in [0,1,2,3]:
             
-            for prob, s_prin, reward, done in P[s][a]:
-                v_new= v_new+policy_pi[(s,a)]*prob*(reward+v[(s_prin)])
+            for prob, s_prime, reward, done in P[s][a]:
+                v_new= v_new+policy_pi[(s,a)]*prob*(reward+v[(s_prime)])
                 
         v[(s)]=v_new
         
