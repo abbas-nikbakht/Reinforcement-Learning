@@ -328,7 +328,13 @@ fig.update_yaxes(range=[0, 3],showticklabels=False,showgrid=False,
                  zeroline=False)
 fig.update_layout(plot_bgcolor="white",paper_bgcolor="white")
 
-
+fig.add_annotation(
+                x=0.4, y=0.5,
+                text=str(v[(0)]),
+                showarrow=False,
+                font=dict(size=16),
+                name="value_0"
+            )
 #####################
 app = Dash()
 
@@ -419,26 +425,31 @@ def function(input2_button_enter,input1_number,input3_sleep):
         theta=0.0001
         delta = float("inf")
         
-        if delta >  theta:  # k: Gauss-seidel method
+        # if delta >  theta:  # k: Gauss-seidel method
             
-            delta=0
-            for s in [0,1,2,4,6,8,9,10,11]:
-                
-                v_old= v[s]
+        delta=0
+        for s in [0,1,2,4,6,8,9,10,11]:
+            
+            v_old= v[s]
 
-                v_new=0
-                for a in [0,1,2,3]:
+            v_new=0
+            for a in [0,1,2,3]:
+                
+                for prob, s_prime, reward, done in P[s][a]:
+                    v_new= v_new+policy_pi[(s,a)]*prob*(reward+v[(s_prime)])
                     
-                    for prob, s_prime, reward, done in P[s][a]:
-                        v_new= v_new+policy_pi[(s,a)]*prob*(reward+v[(s_prime)])
-                        
-                v[(s)]=v_new
-                
-                # Maximum change in V(s) across all states
-                delta = max(delta, abs(v_old - v_new))
+            v[(s)]=v_new
+            
+            # Maximum change in V(s) across all states
+            delta = max(delta, abs(v_old - v_new))
 
-                # print( f"v[({s})]",v[(s)])   
-            fig.add_annotation(x=0.4,y=0.5,text=v[(0)],showarrow=False,font=dict(size=16))
+            # print( f"v[({s})]",v[(s)]) 
+
+            fig.update_annotations(
+                            selector=dict(name="value_0"),
+                            text=str(v[(0)])
+                        )
+            # fig.add_annotation(x=0.4,y=0.5,text=v[(0)],showarrow=False,font=dict(size=16))
 
         # print(v)
                 
