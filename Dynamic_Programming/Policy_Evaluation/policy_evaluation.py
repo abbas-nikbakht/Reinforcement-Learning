@@ -328,13 +328,11 @@ fig.update_yaxes(range=[0, 3],showticklabels=False,showgrid=False,
                  zeroline=False)
 fig.update_layout(plot_bgcolor="white",paper_bgcolor="white")
 
-fig.add_annotation(
-                x=0.4, y=0.5,
-                text=str(v[(0)]),
-                showarrow=False,
-                font=dict(size=16),
-                name="value_0"
-            )
+
+fig.add_annotation(x=0.4, y=0.5,text=str(v[(0)]),
+                   showarrow=False,font=dict(size=16),
+                       name="value_s8")
+
 #####################
 app = Dash()
 
@@ -434,7 +432,6 @@ def function(input2_button_enter,input1_number,input3_sleep,delta_store):
         
         print(delta)
         
-        # while delta >  theta:  # k: Gauss-seidel method
         if delta >  theta:  # k: Gauss-seidel method    
             delta=0
             for s in [0,1,2,4,6,8,9,10,11]:
@@ -454,22 +451,20 @@ def function(input2_button_enter,input1_number,input3_sleep,delta_store):
     
                 # print( f"v[({s})]",v[(s)]) 
     
-                fig.update_annotations(
-                                selector=dict(name="value_0"),
-                                text=str(v[(0)])
-                            )
+                fig.update_annotations(selector=dict(name="value_s8"),text=f"v(s8)={v[(8)]}")
 
-        # print(v)
+            disabled=False
+
+        else:
+            disabled=True
+      
                 
         
         
         print(input3_sleep)
-    
-        
-        
+
         output1_graph=fig        
 
-        disabled=False
         return (output1_graph,disabled,delta)
 
 
