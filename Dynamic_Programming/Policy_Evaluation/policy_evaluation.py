@@ -503,10 +503,6 @@ def function(input2_button_enter,input1_number,input3_sleep,delta_store):
             disabled=True
       
                 
-        
-        
-        print(input3_sleep)
-
         output1_graph=fig        
 
         return (output1_graph,disabled,delta)
