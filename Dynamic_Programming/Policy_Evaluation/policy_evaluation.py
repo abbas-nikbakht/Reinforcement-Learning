@@ -388,8 +388,11 @@ app.layout = html.Div([
     disabled=True
                 ),
     
-    
-    
+    dcc.Store(
+            id="delta_store",
+            data=1e10
+        )
+            
 
 ])
 
@@ -397,16 +400,18 @@ app.layout = html.Div([
     
     Output('output1_graph', 'figure'),
     Output('input3_sleep', 'disabled'),
+    Output("delta_store", "data"),
 
     Input('input2_button_enter', 'n_clicks'),
     State("input1_number", "value"),
     Input("input3_sleep", "n_intervals"), # input3
+    State("delta_store", "data"), # input4
 
 
 )
 
 
-def function(input2_button_enter,input1_number,input3_sleep):
+def function(input2_button_enter,input1_number,input3_sleep,delta_store):
 
     
     # when button click
@@ -419,16 +424,18 @@ def function(input2_button_enter,input1_number,input3_sleep):
         else:
             disabled=False
 
-        return (no_update,disabled)
+        return (no_update,disabled,no_update)
 
 
     # when sleep
     if ctx.triggered_id == "input3_sleep":
         theta=input1_number
-        delta = float("inf")
+        delta = delta_store
         
-        while delta >  theta:  # k: Gauss-seidel method
-            
+        print(delta)
+        
+        # while delta >  theta:  # k: Gauss-seidel method
+        if delta >  theta:  # k: Gauss-seidel method    
             delta=0
             for s in [0,1,2,4,6,8,9,10,11]:
                 
@@ -451,25 +458,23 @@ def function(input2_button_enter,input1_number,input3_sleep):
                                 selector=dict(name="value_0"),
                                 text=str(v[(0)])
                             )
-            # fig.add_annotation(x=0.4,y=0.5,text=v[(0)],showarrow=False,font=dict(size=16))
 
         # print(v)
                 
         
         
         print(input3_sleep)
-        print(input1_number)
     
         
         
         output1_graph=fig        
 
         disabled=False
-        return (output1_graph,disabled)
+        return (output1_graph,disabled,delta)
 
 
 
-    return no_update,no_update
+    return no_update,no_update,no_update
 
 if __name__ == '__main__':
     app.run(
