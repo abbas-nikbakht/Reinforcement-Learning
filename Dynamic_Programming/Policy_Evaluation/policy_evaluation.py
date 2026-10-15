@@ -329,9 +329,38 @@ fig.update_yaxes(range=[0, 3],showticklabels=False,showgrid=False,
 fig.update_layout(plot_bgcolor="white",paper_bgcolor="white")
 
 
-fig.add_annotation(x=0.4, y=0.5,text=str(v[(0)]),
-                   showarrow=False,font=dict(size=16),
-                       name="value_s8")
+# fig.add_annotation(x=0.4, y=0.5,text=str(v[(0)]),
+#                    showarrow=False,font=dict(size=16),
+#                        name="value_s8")
+### for text value state
+# row 0
+fig.add_annotation(x=0.48, y=2.5,text=f"v(s0)={v[(0)]:.5f}",showarrow=False,font=dict(size=14),
+                   name="value_s0")
+fig.add_annotation(x=1.48, y=2.5,text=f"v(s1)={v[(1)]:.5f}",showarrow=False,font=dict(size=14),
+                   name="value_s1")
+fig.add_annotation(x=2.48, y=2.5,text=f"v(s2)={v[(2)]:.5f}",showarrow=False,font=dict(size=14),
+                   name="value_s2")
+fig.add_annotation(x=3.48, y=2.5,text=f"v(s3)={v[(3)]:.5f}",showarrow=False,font=dict(size=14),
+                   name="value_s3")
+# row 1
+fig.add_annotation(x=0.48, y=1.5,text=f"v(s4)={v[(4)]:.5f}",showarrow=False,font=dict(size=14),
+                   name="value_s4")
+fig.add_annotation(x=1.48, y=1.5,text=f"v(s5)={v[(5)]:.5f}",showarrow=False,font=dict(size=14),
+                   name="value_s5")
+fig.add_annotation(x=2.48, y=1.5,text=f"v(s6)={v[(6)]:.5f}",showarrow=False,font=dict(size=14),
+                   name="value_s6")
+fig.add_annotation(x=3.48, y=1.5,text=f"v(s7)={v[(7)]:.5f}",showarrow=False,font=dict(size=14),
+                   name="value_s7")
+# row 2
+fig.add_annotation(x=0.48, y=0.5,text=f"v(s8)={v[(8)]:.5f}",showarrow=False,font=dict(size=14),
+                   name="value_s8")
+fig.add_annotation(x=1.48, y=0.5,text=f"v(s9)={v[(9)]:.5f}",showarrow=False,font=dict(size=14),
+                   name="value_s9")
+fig.add_annotation(x=2.49, y=0.5,text=f"v(s10)={v[(10)]:.5f}",showarrow=False,font=dict(size=14),
+                   name="value_s10")
+fig.add_annotation(x=3.49, y=0.5,text=f"v(s11)={v[(11)]:.5f}",showarrow=False,font=dict(size=14),
+                   name="value_s11")
+
 
 #####################
 app = Dash()
@@ -450,8 +479,10 @@ def function(input2_button_enter,input1_number,input3_sleep,delta_store):
                 delta = max(delta, abs(v_old - v_new))
     
                 # print( f"v[({s})]",v[(s)]) 
-    
-                fig.update_annotations(selector=dict(name="value_s8"),text=f"v(s8)={v[(8)]}")
+                
+                # show value state
+                fig.update_annotations(selector=dict(name="value_s0"),text=f"v(s0)={v[(0)]:.5f}")
+                fig.update_annotations(selector=dict(name="value_s8"),text=f"v(s8)={v[(8)]:.5f}")
 
             disabled=False
 
