@@ -381,7 +381,7 @@ app.layout = html.Div([
             id='input1_number',
             type='number',
             placeholder='Enter a number',
-            value=0.0001
+            value=0.01
 
         ),
         style={
@@ -480,9 +480,22 @@ def function(input2_button_enter,input1_number,input3_sleep,delta_store):
     
                 # print( f"v[({s})]",v[(s)]) 
                 
-                # show value state
-                fig.update_annotations(selector=dict(name="value_s0"),text=f"v(s0)={v[(0)]:.5f}")
-                fig.update_annotations(selector=dict(name="value_s8"),text=f"v(s8)={v[(8)]:.5f}")
+            # show value state
+            fig.update_annotations(selector=dict(name="value_s0"),text=f"v(s0)={v[(0)]:.5f}")
+            fig.update_annotations(selector=dict(name="value_s1"),text=f"v(s1)={v[(1)]:.5f}")
+            fig.update_annotations(selector=dict(name="value_s2"),text=f"v(s2)={v[(2)]:.5f}")
+            fig.update_annotations(selector=dict(name="value_s3"),text=f"v(s3)={v[(3)]:.5f}")
+
+            fig.update_annotations(selector=dict(name="value_s4"),text=f"v(s4)={v[(4)]:.5f}")
+            fig.update_annotations(selector=dict(name="value_s5"),text=f"v(s5)={v[(5)]:.5f}")
+            fig.update_annotations(selector=dict(name="value_s6"),text=f"v(s6)={v[(6)]:.5f}")
+            fig.update_annotations(selector=dict(name="value_s7"),text=f"v(s7)={v[(7)]:.5f}")
+
+            fig.update_annotations(selector=dict(name="value_s8"),text=f"v(s8)={v[(8)]:.5f}")
+            fig.update_annotations(selector=dict(name="value_s9"),text=f"v(s9)={v[(9)]:.5f}")
+            fig.update_annotations(selector=dict(name="value_s10"),text=f"v(s10)={v[(10)]:.5f}")
+            fig.update_annotations(selector=dict(name="value_s11"),text=f"v(s11)={v[(11)]:.5f}")
+
 
             disabled=False
 
