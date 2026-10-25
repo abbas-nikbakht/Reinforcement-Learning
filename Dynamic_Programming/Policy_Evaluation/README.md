@@ -50,7 +50,6 @@ The convergence threshold can be adjusted through the interactive application.
 |---|---|
 | Python | Core programming language |
 | Gymnasium | GridWorld environment and transition dynamics |
-| NumPy | Numerical calculations |
 | Plotly | Interactive GridWorld visualization |
 | Dash | Interactive web application |
 | 🎯 Dynamic Programming | Evaluation of a fixed policy |
