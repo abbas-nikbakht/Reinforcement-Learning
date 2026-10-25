@@ -1,4 +1,7 @@
 # GridWorld 3×4 — Iterative Policy Evaluation
+<p align="center">
+  <img src="./assets/demo.gif" width="800">
+</p>
 
 This project demonstrates how the **Iterative Policy Evaluation** algorithm can be used to estimate the state-value function of a fixed policy in a stochastic 3×4 GridWorld environment.
 
