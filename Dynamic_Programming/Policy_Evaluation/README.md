@@ -68,6 +68,12 @@ pip install dash plotly gymnasium numpy
 ```
 
 ---
+## 📂 Project Files
+
+- **`Policy_Evaluation.py`** — Implements iterative policy evaluation using the Bellman expectation equation and the Gauss-Seidel update method in a custom 3×4 GridWorld environment.
+
+- **`GridWorld_DP_Explanation.ipynb`** — Provides a step-by-step Jupyter Notebook implementation, including explanations of the GridWorld environment, transition model, policy, value function, convergence parameters, and iterative policy evaluation algorithm.
+
 
 ## Run the Application
 
