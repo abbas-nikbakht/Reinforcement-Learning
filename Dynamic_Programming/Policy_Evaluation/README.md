@@ -92,9 +92,6 @@ Possible extensions of this project include:
 - ✅ Update the visualization during the evaluation process.
 - Add an option to select or modify the policy.
 - Allow users to adjust the discount factor \(\gamma\).
-- Visualize the state-value changes across iterations.
-- Display the current maximum change \(\Delta\).
-- Compare Iterative Policy Evaluation with other Dynamic Programming algorithms, such as Value Iteration.
 - Add a reset button to restart the evaluation.
 - Improve the visualization and user interface.
 
