@@ -366,6 +366,11 @@ fig.add_annotation(x=3.49, y=0.5,text=f"v(s11)={v[(11)]:.5f}",showarrow=False,fo
 app = Dash()
 
 app.layout = html.Div([
+    
+
+
+
+    
     dcc.Graph(
         id='output1_graph',
         figure=fig,  
@@ -418,7 +423,21 @@ app.layout = html.Div([
     dcc.Store(
             id="delta_store",
             data=1e10
-        )
+        ),
+    
+    html.Div(
+        "The threshold at which the algorithm stops: θ = ",
+            style={
+        "position": "fixed",
+        "left": "295px",
+        "top": "532px"
+    }
+     
+        #     "left": "275px",
+        #     "top": "-63px"
+        # }
+        
+    ),
             
 
 ])
