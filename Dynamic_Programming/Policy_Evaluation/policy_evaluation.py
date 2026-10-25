@@ -1,6 +1,8 @@
 from dash import Dash, dcc, html, Input, Output, State, callback
 import plotly.graph_objects as go
 from dash import ctx,no_update
+import gymnasium as gym
+
 
 ######################  Description #######################
 
@@ -8,9 +10,7 @@ from dash import ctx,no_update
 
 ############################################################
 
-import gymnasium as gym
-import random as random
-import numpy as np
+
 # Environment creation.
 class GridWorld3x4():
     
@@ -432,11 +432,7 @@ app.layout = html.Div([
         "left": "295px",
         "top": "532px"
     }
-     
-        #     "left": "275px",
-        #     "top": "-63px"
-        # }
-        
+
     ),
             
 
