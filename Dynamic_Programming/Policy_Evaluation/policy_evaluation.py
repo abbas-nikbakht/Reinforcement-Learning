@@ -490,7 +490,7 @@ def function(input2_button_enter,input1_number,input3_sleep,delta_store):
         theta=input1_number
         delta = delta_store
         
-        print(delta)
+        # print(delta)
         
         if delta >  theta:  # k: Gauss-seidel method    
             delta=0
