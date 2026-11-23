@@ -7,6 +7,7 @@
 import gymnasium as gym
 import random as random
 import numpy as np
+
 # Environment creation.
 class GridWorld3x4():
     
@@ -280,6 +281,7 @@ v = {
 ########################## Parameters #####################
 theta=0.0001
 delta = float("inf")
+
 # enviroment
 EnviGridWorld3x4 = GridWorld3x4()
 
@@ -304,6 +306,7 @@ def argmax(q,s):
     return best_action
 
 
+#################### Policy Iteration ####################
 
 policy_stable=False
 while policy_stable== False:
@@ -349,5 +352,29 @@ while policy_stable== False:
     
         if old_action != policy_pi[s]:
             policy_stable = False
+
+
             
+#### Display the Final Policy
+for s in [0,1,2,4,6,8,9,10,11]:
+    
+    if policy_pi[s]==0:
+        policy_pi[s]="←"
+
+    if policy_pi[s]==1:
+        policy_pi[s]="↓"
+
+    if policy_pi[s]==2:
+        policy_pi[s]="→"
+
+    if policy_pi[s]==3:
+        policy_pi[s]="↑"
+
+print("policy_pi=",policy_pi)
+
+
+
+
+
+
         
